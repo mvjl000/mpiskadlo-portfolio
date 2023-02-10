@@ -1,3 +1,4 @@
+import { Hero } from "@/components/Hero/Hero";
 import Head from "next/head";
 
 export default function Home() {
@@ -9,13 +10,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <p className="text-red-500 text-3xl font-[300] ">Hello world 300</p>
-        <p className="text-red-500 text-3xl font-[400] ">Hello world 400</p>
-        <p className="text-red-500 text-3xl font-[500] ">Hello world 500</p>
-        <h2 className="text-red-500 text-2xl font-unbounded">@mpiskadlo</h2>
-        <h3 className="text-red-500 text-2xl font-anton">Portfolio</h3>
-      </main>
+      <>
+        <Hero />
+      </>
     </>
   );
 }
