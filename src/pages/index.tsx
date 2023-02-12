@@ -1,5 +1,6 @@
 import { Experience } from "@/components/Experience/Experience";
 import { Hero } from "@/components/Hero/Hero";
+import Projects from "@/components/Projects/Projects";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <>
         <Hero />
         <Experience />
+        <Projects />
       </>
     </>
   );

@@ -15,7 +15,10 @@ module.exports = {
       colors: {
 				'hero-bg': '#131313',
 				'default-font': '#ffffff',
-      }
+      },
+      gridTemplateColumns: {
+        projects: '4fr 2fr',
+      },
     },
   },
   plugins: [],
