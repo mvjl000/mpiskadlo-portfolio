@@ -15,6 +15,7 @@ const anton = Anton({
 });
 const montserrat = Montserrat({
   weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
