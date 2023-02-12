@@ -11,7 +11,7 @@ export const Project = () => {
         </div>
       </div>
       <div className="p-4 flex flex-col justify-between">
-        <h3 className="my-6 lg:mt-0 lg:mb-11 font-unbounded text-indigo-200 text-4xl sm:text-5xl md:text-6xl text-center">
+        <h3 className="my-6 lg:mt-0 lg:mb-11 font-unbounded text-indigo-200 text-5xl sm:text-6xl 2xl:text-7xl text-center">
           <a
             href="https://didu-website.vercel.app/"
             className="hover:underline"
@@ -22,7 +22,7 @@ export const Project = () => {
           </a>
         </h3>
         <div>
-          <p className="text-indigo-200 font-anton text-2xl md:text-3xl">
+          <p className="text-indigo-200 font-anton text-2xl md:text-3xl 2xl:text-4x;">
             Tech stack:
           </p>
           <ul className="mt-4 flex flex-wrap items-start justify-start text-gray-200 gap-1.5 md:gap-2">
