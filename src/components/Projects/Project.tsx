@@ -1,6 +1,6 @@
 import Image from "next/image";
-import diduLogo from "@/images/didu.svg";
-import { ArrowLeftIcon, ArrowRightIcon } from "@/images/ArrowsSvgs";
+import diduLogo from "@/images/svg/didu.svg";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/images/svg/ArrowsSvgs";
 
 export const Project = () => {
   return (
