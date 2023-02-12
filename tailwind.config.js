@@ -19,6 +19,9 @@ module.exports = {
       gridTemplateColumns: {
         projects: '4fr 2fr',
       },
+      gridTemplateRows: {
+        projects: '1fr minmax(100px, auto)'
+      }
     },
   },
   plugins: [],
