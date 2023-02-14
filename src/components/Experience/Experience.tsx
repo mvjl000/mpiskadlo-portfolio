@@ -97,7 +97,9 @@ export const Experience = () => {
               rel="noreferrer"
               target="_blank"
             >
-              - Norbert Fijałek
+              - Norbert Fijałek,
+              <br />
+              CEO of AI Busters
             </a>
           </ExperienceCard>
           <p className="hidden lg:flex items-center text-center font-unbounded font-[500] text-[#5574b0] text-2xl xl:text-3xl tracking-wider xl:tracking-widest 2xl:pr-10">
