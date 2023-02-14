@@ -1,6 +1,7 @@
 import Image from "next/image";
 import diduLogo from "@/images/svg/didu.svg";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/images/svg/ArrowsSvgs";
+import LinkIcon from "@/images/svg/link-icon.svg";
 
 export const Project = () => {
   return (
@@ -19,6 +20,9 @@ export const Project = () => {
             target="_blank"
           >
             didu
+            <span className="inline-block ml-1">
+              <Image src={LinkIcon} alt="Link icon" className="w-8" />
+            </span>
           </a>
         </h3>
         <div>
