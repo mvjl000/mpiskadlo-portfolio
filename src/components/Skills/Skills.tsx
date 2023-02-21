@@ -2,13 +2,13 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen py-4 md:py-5 bg-gradient-to-b from-hero-bg via-[#000] to-[#000]"
+      className="min-h-screen py-4 md:py-5 bg-gradient-to-b from-hero-bg via-black to-black"
     >
       <h2 className="px-4 text-5xl sm:text-6xl md:text-7xl mt-6 md:mt-8 md:mx-4 font-unbounded font-[400] text-indigo-400 flex justify-between">
         Skills
       </h2>
       <div className="flex flex-col lg:flex-row">
-        <p className="lg:w-6/12 lg:min-w-[600px] text-indigo-200 mt-16 px-4 lg:pl-8 lg:pr-0 font-unbounded text-base md:text-lg xl:text-xl 2xl:text-2xl text-justify">
+        <p className="lg:w-6/12 lg:min-w-[600px] text-indigo-200 mt-16 px-4 lg:pl-8 lg:pr-0 font-unbounded text-base md:text-lg xl:text-xl 2xl:text-2xl">
           Mainly focused on{" "}
           <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:skew-x-6 before:skew-y-2 before:-z-[1]">
             fronted
@@ -19,8 +19,9 @@ export const Skills = () => {
             backend
           </span>{" "}
           related stuff and I would love to move towards becoming a fullstack
-          developer one day (probably in the JS ecosystem). Besides of that I
-          {"'"}m super hyped about mobile apps and{" "}
+          developer one day (most likely in the JS ecosystem).
+          <br />
+          Besides of that I{"'"}m super hyped about mobile apps and{" "}
           <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:skew-x-6 before:-skew-y-1 before:-z-[1]">
             React Native
           </span>
