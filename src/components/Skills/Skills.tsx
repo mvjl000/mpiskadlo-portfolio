@@ -1,3 +1,55 @@
+import { SkillCard, SkillCardTypes } from "./SkillCard";
+
+const MOCK_SKILLS: SkillCardTypes[] = [
+  {
+    id: 1,
+    title: "Frontend",
+    subtitle: "Languages & frameworks",
+    items: ["Javascript", "Typescript", "React", "Next.js", "Vue", "Astro"],
+    backgroundColorHex: "#f86a1a",
+  },
+  {
+    id: 2,
+    title: "Frontend",
+    subtitle: "Styling & others",
+    items: [
+      "Tailwind",
+      "Sass/Scss",
+      "Styled Components",
+      "Storybook",
+      "React Testing Library",
+      "Framer Motion",
+    ],
+    backgroundColorHex: "#00f89e",
+  },
+  {
+    id: 3,
+    title: "Backend",
+    items: ["NodeJS", "ExpressJS", "tRPC", "Prisma"],
+    backgroundColorHex: "#dbff06",
+  },
+  {
+    id: 4,
+    title: "Tools",
+    items: ["Linux", "MacOS", "Windows", "Figma", "Visual Studio Code"],
+    backgroundColorHex: "#00e9f8",
+  },
+  {
+    id: 5,
+    title: "Others",
+    subtitle: "& soft skills",
+    items: [
+      "React Native",
+      "Polish (Native)",
+      "English (B2+)",
+      "Team Player",
+      "Self Development",
+      "Curious",
+    ],
+    backgroundColorHex: "#d2ecee",
+  },
+];
+
 export const Skills = () => {
   return (
     <section
@@ -28,7 +80,10 @@ export const Skills = () => {
           , a lot of knowledge to acquire, everything can be done with time ;)
         </p>
         <div className="h-[500px] lg:h-[600px] mt-8 lg:mt-0 lg:ml-16 px-10 flex items-center gap-3 overflow-x-scroll scrollbar-hide">
-          <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#f86a1a] border-black border-4 rounded-lg p-4 rotate-6 z-[5]">
+          {MOCK_SKILLS.map((skill) => (
+            <SkillCard key={skill.id} data={skill} />
+          ))}
+          {/* <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#f86a1a] border-black border-4 rounded-lg p-4 rotate-6 z-[5]">
             <h3 className="text-3xl lg:text-4xl font-unbounded flex flex-col">
               Frontend{" "}
               <span className="inline-block text-xs lg:text-sm">
@@ -43,8 +98,8 @@ export const Skills = () => {
               <li>Vue</li>
               <li>Astro</li>
             </ul>
-          </div>
-          <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#00f89e] border-black border-4 rounded-lg p-4 -rotate-[5deg] -translate-y-6 z-[4]">
+          </div> */}
+          {/* <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#00f89e] border-black border-4 rounded-lg p-4 -rotate-[5deg] -translate-y-6 z-[4]">
             <h3 className="text-3xl lg:text-4xl font-unbounded flex flex-col">
               Frontend
               <span className="inline-block text-xs lg:text-sm">
@@ -94,7 +149,7 @@ export const Skills = () => {
               <li>Self Development</li>
               <li>Curious</li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
