@@ -12,7 +12,7 @@ export const Project = ({ data }: ProjectProps) => {
   return (
     <div className="mt-6 md:mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-projects md:grid-rows-projects gap-[1px] lg:gap-[2px]">
       <div className="bg-hero-bg pr-4 pb-4">
-        <div className="flex justify-center bg-white rounded-md h-full min-h-[300px] relative object-cover overflow-hidden">
+        <div className="flex justify-center bg-white rounded-md h-full min-h-[300px] overflow-hidden">
           <Image src={diduLogo} className="w-[60%]" alt="project logo" />
         </div>
       </div>
