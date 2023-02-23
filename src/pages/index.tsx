@@ -1,11 +1,90 @@
+import client from "@/apollo-client";
 import { Experience } from "@/components/Experience/Experience";
 import { Footer } from "@/components/Footer/Footer";
 import { Hero } from "@/components/Hero/Hero";
 import Projects from "@/components/Projects/Projects";
 import { Skills } from "@/components/Skills/Skills";
+import { ApolloQueryResult, gql } from "@apollo/client";
+import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
+import { z } from "zod";
 
-export default function Home() {
+const projectSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string().min(140).max(512),
+  gallery: z.array(
+    z.object({
+      id: z.string(),
+      alt: z.string(),
+      url: z.string().url(),
+    })
+  ),
+});
+
+const projectsSchema = z.array(projectSchema);
+
+const projectsResponseSchema = z.object({
+  allProjects: projectsSchema,
+  _allProjectsMeta: z.object({
+    count: z.number(),
+  }),
+});
+
+type ProjectsResponse = z.infer<typeof projectsResponseSchema>;
+
+export const getStaticProps = async () => {
+  const { data }: ApolloQueryResult<ProjectsResponse> = await client.query({
+    query: gql`
+      {
+        allProjects {
+          id
+          title
+          description
+          gallery {
+            id
+            alt
+            url
+          }
+        }
+
+        _allProjectsMeta {
+          count
+        }
+      }
+    `,
+  });
+
+  const parsingResult = projectsSchema.safeParse(data.allProjects);
+
+  if (!parsingResult.success)
+    return {
+      props: {
+        projects: {
+          success: false,
+          data: null,
+        },
+      },
+    } as const;
+
+  return {
+    props: {
+      projects: {
+        success: true as const,
+        data: parsingResult.data,
+      },
+    },
+  };
+};
+
+export default function Home({
+  projects,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  if (projects.success) {
+    console.log("ALL GOOD", projects.data);
+  } else {
+    console.log("ERRRORRRRRR");
+  }
   return (
     <>
       <Head>
