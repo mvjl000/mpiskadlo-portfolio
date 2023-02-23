@@ -9,10 +9,35 @@ import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { z } from "zod";
 
+const projectsQuery = gql`
+  {
+    allProjects {
+      id
+      title
+      description
+      projectUrl
+      techStack
+      gallery {
+        id
+        alt
+        url
+      }
+    }
+
+    _allProjectsMeta {
+      count
+    }
+  }
+`;
+
 const projectSchema = z.object({
   id: z.string(),
   title: z.string(),
   description: z.string().min(140).max(512),
+  projectUrl: z.string().url(),
+  techStack: z.object({
+    data: z.array(z.string()),
+  }),
   gallery: z.array(
     z.object({
       id: z.string(),
@@ -31,28 +56,12 @@ const projectsResponseSchema = z.object({
   }),
 });
 
-type ProjectsResponse = z.infer<typeof projectsResponseSchema>;
+export type ProjectType = z.infer<typeof projectSchema>;
+type ProjectsResponseType = z.infer<typeof projectsResponseSchema>;
 
 export const getStaticProps = async () => {
-  const { data }: ApolloQueryResult<ProjectsResponse> = await client.query({
-    query: gql`
-      {
-        allProjects {
-          id
-          title
-          description
-          gallery {
-            id
-            alt
-            url
-          }
-        }
-
-        _allProjectsMeta {
-          count
-        }
-      }
-    `,
+  const { data }: ApolloQueryResult<ProjectsResponseType> = await client.query({
+    query: projectsQuery,
   });
 
   const parsingResult = projectsSchema.safeParse(data.allProjects);
@@ -80,11 +89,6 @@ export const getStaticProps = async () => {
 export default function Home({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  if (projects.success) {
-    console.log("ALL GOOD", projects.data);
-  } else {
-    console.log("ERRRORRRRRR");
-  }
   return (
     <>
       <Head>
@@ -96,7 +100,18 @@ export default function Home({
       <>
         <Hero />
         <Experience />
-        <Projects />
+        {projects.success ? (
+          <Projects projects={projects.data} />
+        ) : (
+          <div className="h-screen bg-black flex items-center justify-center">
+            <p className="text-2xl text-center text-white">
+              Ooops, something went wrong
+              <br />
+              Couldn{"'"}t fetch projects
+            </p>
+          </div>
+        )}
+
         <Skills />
         <Footer />
       </>

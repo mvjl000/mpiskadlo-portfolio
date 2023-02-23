@@ -1,6 +1,11 @@
 import { Project } from "@/components/Projects/Project";
+import { type ProjectType } from "@/pages/index";
 
-export const Projects = () => {
+interface ProjectsProps {
+  projects: ProjectType[];
+}
+
+export const Projects = ({ projects }: ProjectsProps) => {
   return (
     <section
       id="projects"
@@ -10,7 +15,9 @@ export const Projects = () => {
         Projects
       </h2>
       <div className="mt-3">
-        <Project />
+        {projects.map((project) => (
+          <Project key={project.id} data={project} />
+        ))}
       </div>
     </section>
   );
