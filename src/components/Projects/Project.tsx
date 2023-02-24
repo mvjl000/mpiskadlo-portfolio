@@ -3,18 +3,54 @@ import diduLogo from "@/images/svg/didu.svg";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/images/svg/ArrowsSvgs";
 import LinkIcon from "@/images/svg/link-icon.svg";
 import { ProjectType } from "@/pages";
+import { motion, Variants } from "framer-motion";
+import { useState } from "react";
 
 interface ProjectProps {
   data: ProjectType;
+  handleChangeIndex: (action: "next" | "prev") => void;
+  direction: "next" | "prev" | undefined;
 }
 
-export const Project = ({ data }: ProjectProps) => {
+const variants: Variants = {
+  initial: (direction) => {
+    return {
+      x: direction === "next" ? "110%" : "-110%",
+    };
+  },
+  animate: {
+    x: 0,
+  },
+  exit: (direction) => {
+    return {
+      x: direction === "next" ? "-110%" : "110%",
+    };
+  },
+};
+
+export const Project = ({
+  data,
+  handleChangeIndex,
+  direction,
+}: ProjectProps) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
   return (
-    <div className="mt-6 md:mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-projects md:grid-rows-projects gap-[1px] lg:gap-[2px]">
-      <div className="bg-hero-bg pr-4 pb-4">
-        <div className="flex justify-center bg-white rounded-md h-full min-h-[300px] overflow-hidden">
+    <motion.div
+      className={`mt-6 md:mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-projects md:grid-rows-projects gap-[1px] lg:gap-[2px] absolute`}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      custom={direction}
+      transition={{ duration: 0.75 }}
+      onAnimationStart={() => setIsAnimating(true)}
+      onAnimationComplete={() => setIsAnimating(false)}
+    >
+      <div className="bg-black pr-4 pb-4">
+        {/* <div className="flex justify-center bg-white rounded-md h-full min-h-[300px] overflow-hidden">
           <Image src={diduLogo} className="w-[60%]" alt="project logo" />
-        </div>
+        </div> */}
       </div>
       <div className="p-4 flex flex-col justify-between">
         <h3 className="my-6 lg:mt-0 lg:mb-11 font-unbounded text-indigo-200 text-5xl sm:text-6xl 2xl:text-7xl text-center">
@@ -49,15 +85,25 @@ export const Project = ({ data }: ProjectProps) => {
         </p>
       </div>
       <div className="text-white min-h-[100px] flex gap-1 lg:gap-2">
-        <button className="w-[50%] h-full bg-hero-bg hover:bg-stone-900 font-unbounded flex flex-col gap-3 items-center justify-center">
+        <button
+          type="button"
+          disabled={isAnimating}
+          onClick={() => handleChangeIndex("prev")}
+          className="w-[50%] h-full bg-hero-bg hover:bg-stone-900 font-unbounded flex flex-col gap-3 items-center justify-center disabled:hover:bg-hero-bg disabled:cursor-default"
+        >
           PREVIOUS
           <ArrowLeftIcon />
         </button>
-        <button className="w-[50%] h-full bg-hero-bg hover:bg-stone-900 font-unbounded flex flex-col gap-3 items-center justify-center">
+        <button
+          type="button"
+          disabled={isAnimating}
+          onClick={() => handleChangeIndex("next")}
+          className="w-[50%] h-full bg-hero-bg hover:bg-stone-900 font-unbounded flex flex-col gap-3 items-center justify-center disabled:hover:bg-hero-bg disabled:cursor-default"
+        >
           NEXT
           <ArrowRightIcon />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
