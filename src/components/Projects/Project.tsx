@@ -37,7 +37,7 @@ export const Project = ({
 
   return (
     <motion.div
-      className={`mt-6 md:mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-projects md:grid-rows-projects gap-[1px] lg:gap-[2px] absolute`}
+      className="h-full flex flex-col justify-start md:grid md:grid-cols-projects md:grid-rows-projects gap-[1px] lg:gap-[2px] absolute"
       variants={variants}
       initial="initial"
       animate="animate"
@@ -47,10 +47,10 @@ export const Project = ({
       onAnimationStart={() => setIsAnimating(true)}
       onAnimationComplete={() => setIsAnimating(false)}
     >
-      <div className="bg-black pr-4 pb-4">
-        {/* <div className="flex justify-center bg-white rounded-md h-full min-h-[300px] overflow-hidden">
-          <Image src={diduLogo} className="w-[60%]" alt="project logo" />
-        </div> */}
+      <div className="hidden md:block px-4 py-4 md:pt-0">
+        <div className="flex justify-center bg-white rounded-md w-full h-full min-h-[300px] overflow-hidden">
+          {/* <Image src={diduLogo} className="w-[60%]" alt="project logo" /> */}
+        </div>
       </div>
       <div className="p-4 flex flex-col justify-between">
         <h3 className="my-6 lg:mt-0 lg:mb-11 font-unbounded text-indigo-200 text-5xl sm:text-6xl 2xl:text-7xl text-center">
@@ -67,7 +67,7 @@ export const Project = ({
           </a>
         </h3>
         <div>
-          <p className="text-indigo-200 font-anton text-2xl md:text-3xl 2xl:text-4x;">
+          <p className="hidden md:block text-indigo-200 font-anton text-2xl md:text-3xl 2xl:text-4x;">
             Tech stack:
           </p>
           <ul className="mt-4 flex flex-wrap items-start justify-start text-gray-200 gap-1.5 md:gap-2">
@@ -84,7 +84,7 @@ export const Project = ({
           {data.description}
         </p>
       </div>
-      <div className="text-white min-h-[100px] flex gap-1 lg:gap-2">
+      <div className="text-white min-h-[100px] mt-auto md:mt-0 flex gap-1 lg:gap-2">
         <button
           type="button"
           disabled={isAnimating}
