@@ -20,7 +20,7 @@ module.exports = {
         projects: '4fr 2fr',
       },
       gridTemplateRows: {
-        projects: '1fr minmax(100px, auto)'
+        projects: '3fr 1fr'
       }
     },
   },
