@@ -17,6 +17,7 @@ const projectsQuery = gql`
       description
       projectUrl
       techStack
+      repoUrl
       gallery {
         id
         alt
@@ -35,6 +36,7 @@ const projectSchema = z.object({
   title: z.string(),
   description: z.string().min(140).max(512),
   projectUrl: z.string().url(),
+  repoUrl: z.union([z.string().url(), z.string().length(0)]),
   techStack: z.object({
     data: z.array(z.string()),
   }),

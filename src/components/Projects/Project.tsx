@@ -1,7 +1,7 @@
 import Image from "next/image";
-import diduLogo from "@/images/svg/didu.svg";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/images/svg/ArrowsSvgs";
 import LinkIcon from "@/images/svg/link-icon.svg";
+import GithubIcon from "@/images/svg/github-icon.svg";
 import { ProjectType } from "@/pages";
 import { motion, Variants } from "framer-motion";
 import { useState } from "react";
@@ -75,9 +75,24 @@ export const Project = ({
           </a>
         </h3>
         <div>
-          <p className="hidden md:block text-indigo-200 font-anton text-2xl md:text-3xl 2xl:text-4x;">
-            Tech stack:
-          </p>
+          <div className="flex justify-center md:justify-between">
+            <p className="hidden md:block text-indigo-200 font-anton text-2xl md:text-3xl 2xl:text-4x;">
+              Tech stack:
+            </p>
+            {data.repoUrl ? (
+              <a
+                className="text-white flex items-center justify-center w-11 h-11 rounded-md hover:bg-stone-700"
+                href="https://github.com/mvjl000"
+              >
+                <Image
+                  src={GithubIcon}
+                  className="w-10 h-10"
+                  alt="Github icon"
+                />
+                <span className="visually-hidden">See the repo</span>
+              </a>
+            ) : null}
+          </div>
           <ul className="mt-4 flex flex-wrap items-start justify-start text-gray-200 gap-1.5 md:gap-2">
             {data.techStack.data.map((item, index) => (
               <li key={index} className="bg-[#262837] p-2 rounded-md">
