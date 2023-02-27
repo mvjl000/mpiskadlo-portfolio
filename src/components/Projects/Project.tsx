@@ -37,7 +37,7 @@ export const Project = ({
 
   return (
     <motion.div
-      className="h-full flex flex-col justify-start md:grid md:grid-cols-projects md:grid-rows-projects gap-[1px] lg:gap-[2px] absolute"
+      className="h-full flex flex-col justify-start lg:grid lg:grid-cols-projects lg:grid-rows-projects gap-[1px] lg:gap-[2px] absolute"
       variants={variants}
       initial="initial"
       animate="animate"
@@ -47,7 +47,7 @@ export const Project = ({
       onAnimationStart={() => setIsAnimating(true)}
       onAnimationComplete={() => setIsAnimating(false)}
     >
-      <div className="hidden md:block px-4 py-4 md:pt-0">
+      <div className="hidden lg:block px-4 py-4 lg:pt-0">
         <div className="w-full h-full min-h-[300px] flex justify-center items-center p-4 bg-white rounded-md">
           <div className="w-full h-full  overflow-hidden relative">
             <Image
@@ -75,14 +75,16 @@ export const Project = ({
           </a>
         </h3>
         <div>
-          <div className="flex justify-center md:justify-between">
-            <p className="hidden md:block text-indigo-200 font-anton text-2xl md:text-3xl 2xl:text-4x;">
+          <div className="md:my-5 lg:my-0 flex justify-center lg:justify-between">
+            <p className="hidden lg:block text-indigo-200 font-anton text-2xl lg:text-3xl 2xl:text-4x;">
               Tech stack:
             </p>
             {data.repoUrl ? (
               <a
                 className="text-white flex items-center justify-center w-11 h-11 rounded-md hover:bg-stone-700"
-                href="https://github.com/mvjl000"
+                href={data.repoUrl}
+                rel="noreferrer"
+                target="_blank"
               >
                 <Image
                   src={GithubIcon}
@@ -93,7 +95,7 @@ export const Project = ({
               </a>
             ) : null}
           </div>
-          <ul className="mt-4 flex flex-wrap items-start justify-start text-gray-200 gap-1.5 md:gap-2">
+          <ul className="mt-4 flex flex-wrap items-start justify-start text-gray-200 gap-1.5 lg:gap-2">
             {data.techStack.data.map((item, index) => (
               <li key={index} className="bg-[#262837] p-2 rounded-md">
                 {item}
@@ -102,12 +104,10 @@ export const Project = ({
           </ul>
         </div>
       </div>
-      <div className="text-white">
-        <p className="font-unbounded p-4 text-indigo-200 text-base md:text-lg xl:text-xl 2xl:text-2xl tracking-[0px] text-justify">
-          {data.description}
-        </p>
-      </div>
-      <div className="text-white min-h-[100px] mt-auto md:mt-0 flex gap-1 lg:gap-2">
+      <p className="font-unbounded p-4 text-indigo-200 text-base md:text-lg xl:text-xl 2xl:text-2xl tracking-[0px] text-justify">
+        {data.description}
+      </p>
+      <div className="text-white min-h-[100px] mt-auto lg:mt-0 flex gap-1 lg:gap-2">
         <button
           type="button"
           disabled={isAnimating}
