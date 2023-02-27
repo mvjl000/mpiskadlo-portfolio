@@ -48,8 +48,16 @@ export const Project = ({
       onAnimationComplete={() => setIsAnimating(false)}
     >
       <div className="hidden md:block px-4 py-4 md:pt-0">
-        <div className="flex justify-center bg-white rounded-md w-full h-full min-h-[300px] overflow-hidden">
-          {/* <Image src={diduLogo} className="w-[60%]" alt="project logo" /> */}
+        <div className="w-full h-full min-h-[300px] flex justify-center items-center p-4 bg-white rounded-md">
+          <div className="w-full h-full  overflow-hidden relative">
+            <Image
+              src={data.gallery[0].url}
+              alt="project logo"
+              fill={true}
+              quality={100}
+              className="object-contain"
+            />
+          </div>
         </div>
       </div>
       <div className="p-4 flex flex-col justify-between">
