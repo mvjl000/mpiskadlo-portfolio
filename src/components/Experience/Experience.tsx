@@ -1,6 +1,21 @@
+import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 import { ExperienceCard } from "./ExperienceCard";
 import aibLogo from "@/images/ai_icon.png";
-import Image from "next/image";
+
+const variants: Variants = {
+  offscreen: (isOdd) => ({
+    x: isOdd ? -100 : 100,
+    opacity: 0.3,
+  }),
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
 
 export const Experience = () => {
   return (
@@ -13,7 +28,7 @@ export const Experience = () => {
       </h2>
       <div className="w-[95%] sm:w-[80%] mx-auto mt-9 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20 flex flex-col gap-16 items-center lg:items-start">
         <div className="w-full flex justify-between gap-7">
-          <ExperienceCard>
+          <ExperienceCard index={1}>
             <div className="h-14 lg:h-16 flex items-center justify-start gap-3 lg:gap-5">
               <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-md bg-[#223862] flex items-center justify-center">
                 <Image
@@ -47,15 +62,29 @@ export const Experience = () => {
               communication.
             </p>
           </ExperienceCard>
-          <p className="hidden lg:flex items-center text-center font-unbounded font-[500] text-[#5574b0] text-2xl xl:text-3xl tracking-wider xl:tracking-widest 2xl:pr-10">
+          <motion.p
+            className="hidden lg:flex items-center text-center font-unbounded font-[500] text-[#5574b0] text-2xl xl:text-3xl tracking-wider xl:tracking-widest 2xl:pr-10"
+            variants={variants}
+            custom={true}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 1 }}
+          >
             About the company
-          </p>
+          </motion.p>
         </div>
         <div className="w-full flex justify-between gap-7">
-          <p className="hidden lg:flex items-center text-center font-unbounded font-[500] text-[#5574b0] text-2xl xl:text-3xl tracking-wider xl:tracking-widest 2xl:pl-10">
+          <motion.p
+            className="hidden lg:flex items-center text-center font-unbounded font-[500] text-[#5574b0] text-2xl xl:text-3xl tracking-wider xl:tracking-widest 2xl:pl-10"
+            variants={variants}
+            custom={false}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 1 }}
+          >
             My role
-          </p>
-          <ExperienceCard>
+          </motion.p>
+          <ExperienceCard index={2}>
             <h4 className="font-anton text-[#94b9ff] text-2xl lg:text-[1.7rem] font-[400] tracking-[1px]">
               Responsibilities
             </h4>
@@ -65,7 +94,7 @@ export const Experience = () => {
               system. The tech stack I used during this project was React (SPA)
               and Typescript connected with Django REST API.
             </p>
-            <ul className="mt-5 text-[#5574b0] pl-5 relative before:block before:w-1 before:h-full before:absolute before:top-0 before:left-1 before:bg-[#2a4372]">
+            <ul className="mt-5 text-[#5574b0] pl-5 flex flex-col gap-1 relative before:block before:w-1 before:h-full before:absolute before:top-0 before:left-1 before:bg-[#2a4372]">
               <li>New features</li>
               <li>Bug fixes</li>
               <li>Code maintenance</li>
@@ -74,7 +103,7 @@ export const Experience = () => {
           </ExperienceCard>
         </div>
         <div className="w-full flex justify-between gap-7">
-          <ExperienceCard>
+          <ExperienceCard index={3}>
             <h4 className="font-anton text-[#94b9ff] text-2xl lg:text-[1.7rem] font-[400] tracking-[1px]">
               Reference
             </h4>
@@ -102,9 +131,16 @@ export const Experience = () => {
               CEO of AI Busters
             </a>
           </ExperienceCard>
-          <p className="hidden lg:flex items-center text-center font-unbounded font-[500] text-[#5574b0] text-2xl xl:text-3xl tracking-wider xl:tracking-widest 2xl:pr-10">
+          <motion.p
+            className="hidden lg:flex items-center text-center font-unbounded font-[500] text-[#5574b0] text-2xl xl:text-3xl tracking-wider xl:tracking-widest 2xl:pr-10"
+            variants={variants}
+            custom={true}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 1 }}
+          >
             CEO{"'"}s opinion
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
