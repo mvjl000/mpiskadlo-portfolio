@@ -54,7 +54,7 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen py-4 md:py-5 bg-gradient-to-b from-hero-bg via-black to-black"
+      className="min-h-screen py-4 md:py-5 mt-20 lg:mt-28 bg-gradient-to-b from-hero-bg via-black to-black"
     >
       <h2 className="px-4 text-5xl sm:text-6xl md:text-7xl mt-6 md:mt-8 md:mx-4 font-unbounded font-[400] text-indigo-400 flex justify-between">
         Skills

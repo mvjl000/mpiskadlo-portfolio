@@ -21,7 +21,7 @@ export const Experience = () => {
   return (
     <section
       id="experience"
-      className="min-h-screen bg-gray-900 p-4 md:p-5 pb-10"
+      className="min-h-screen bg-gray-900 p-4 md:p-5 pb-20 lg:pb-28"
     >
       <h2 className="text-5xl sm:text-6xl md:text-7xl mt-6 md:mt-8 md:mx-4 font-unbounded font-[400] text-indigo-400">
         Experience
