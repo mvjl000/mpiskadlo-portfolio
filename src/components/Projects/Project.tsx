@@ -35,6 +35,15 @@ export const Project = ({
 }: ProjectProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const handleSetAnimate = (starting: boolean) => {
+    if (starting) {
+      document.documentElement.classList.add("no-scroll");
+    } else {
+      document.documentElement.classList.remove("no-scroll");
+    }
+    setIsAnimating(!isAnimating);
+  };
+
   return (
     <motion.div
       className="h-full flex flex-col justify-start lg:grid lg:grid-cols-projects lg:grid-rows-projects gap-[1px] lg:gap-[2px] absolute"
@@ -44,8 +53,8 @@ export const Project = ({
       exit="exit"
       custom={direction}
       transition={{ duration: 0.75 }}
-      onAnimationStart={() => setIsAnimating(true)}
-      onAnimationComplete={() => setIsAnimating(false)}
+      onAnimationStart={() => handleSetAnimate(true)}
+      onAnimationComplete={() => handleSetAnimate(false)}
     >
       <div className="hidden lg:block px-4 py-4 lg:pt-0">
         <div className="w-full h-full min-h-[300px] flex justify-center items-center p-4 bg-white rounded-md">

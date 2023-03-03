@@ -7,8 +7,8 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html.no-scroll,
+html.no-scroll body {
   overflow-x: hidden;
 }
 
