@@ -1,3 +1,4 @@
+import { motion, Variants } from "framer-motion";
 import { SkillCard, SkillCardTypes } from "./SkillCard";
 
 const MOCK_SKILLS: SkillCardTypes[] = [
@@ -50,6 +51,18 @@ const MOCK_SKILLS: SkillCardTypes[] = [
   },
 ];
 
+const variants: Variants = {
+  offscreen: {
+    opacity: 0.8,
+  },
+  onscreen: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
 export const Skills = () => {
   return (
     <section
@@ -60,7 +73,13 @@ export const Skills = () => {
         Skills
       </h2>
       <div className="flex flex-col gap-14 lg:gap-24 mt-14">
-        <div className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint]">
+        <motion.div
+          className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint]"
+          variants={variants}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.75 }}
+        >
           <p className="lg:w-6/12 text-indigo-200 pr-4 pl-10 font-unbounded text-lg md:text-xl xl:text-2xl 2xl:text-3xl md:sticky md:top-10">
             Mainly focused on{" "}
             <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:skew-x-6 before:skew-y-2 before:-z-[1]">
@@ -73,8 +92,14 @@ export const Skills = () => {
             <SkillCard data={MOCK_SKILLS[0]} index={1} />
             <SkillCard data={MOCK_SKILLS[1]} index={2} />
           </div>
-        </div>
-        <div className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint]">
+        </motion.div>
+        <motion.div
+          className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint]"
+          variants={variants}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.75 }}
+        >
           <p className="lg:w-6/12 text-yellow-200 pr-4 pl-10 font-unbounded text-lg md:text-xl xl:text-2xl 2xl:text-3xl md:sticky md:top-10">
             However I know some{" "}
             <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-yellow-900 before:-skew-x-[10deg] before:-z-[1]">
@@ -86,8 +111,14 @@ export const Skills = () => {
           <div className="flex justify-center flex-grow px-3 lg:px-0">
             <SkillCard data={MOCK_SKILLS[2]} index={2} />
           </div>
-        </div>
-        <div className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint] mb-36">
+        </motion.div>
+        <motion.div
+          className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint] mb-36"
+          variants={variants}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.75 }}
+        >
           <p className="lg:w-6/12 text-emerald-200 pr-4 pl-10 font-unbounded text-lg md:text-xl xl:text-2xl 2xl:text-3xl md:sticky md:top-10">
             Besides of that I{"'"}m super hyped about mobile apps and{" "}
             <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-emerald-900 before:skew-x-6 before:-skew-y-1 before:-z-[1]">
@@ -100,7 +131,7 @@ export const Skills = () => {
             <SkillCard data={MOCK_SKILLS[3]} index={1} />
             <SkillCard data={MOCK_SKILLS[4]} index={2} />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
