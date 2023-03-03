@@ -16,17 +16,6 @@ body {
   background-color: #131313;
 }
 
-/* For Webkit-based browsers (Chrome, Safari and Opera) */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* For IE, Edge and Firefox */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
 /* <ACCESSIBILITY> Hiding class, making content visible only to screen readers but not visually */
 .visually-hidden {
   clip: rect(0 0 0 0);

@@ -54,102 +54,52 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen py-4 md:py-5 mt-20 lg:mt-28 bg-gradient-to-b from-hero-bg via-black to-black"
+      className="min-h-screen py-4 md:py-5 pb-32 mt-20 lg:mt-28 bg-black"
     >
       <h2 className="px-4 text-5xl sm:text-6xl md:text-7xl mt-6 md:mt-8 md:mx-4 font-unbounded font-[400] text-indigo-400 flex justify-between">
         Skills
       </h2>
-      <div className="flex flex-col lg:flex-row">
-        <p className="lg:w-6/12 lg:min-w-[600px] text-indigo-200 mt-16 px-4 lg:pl-8 lg:pr-0 font-unbounded text-base md:text-lg xl:text-xl 2xl:text-2xl">
-          Mainly focused on{" "}
-          <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:skew-x-6 before:skew-y-2 before:-z-[1]">
-            fronted
-          </span>{" "}
-          and that
-          {"'"}s the area I want to master first. However I know some{" "}
-          <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:-skew-x-[10deg] before:-z-[1]">
-            backend
-          </span>{" "}
-          related stuff and I would love to move towards becoming a fullstack
-          developer one day (most likely in the JS ecosystem).
-          <br />
-          Besides of that I{"'"}m super hyped about mobile apps and{" "}
-          <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:skew-x-6 before:-skew-y-1 before:-z-[1]">
-            React Native
-          </span>
-          , a lot of knowledge to acquire, everything can be done with time ;)
-        </p>
-        <div className="h-[500px] lg:h-[600px] mt-8 lg:mt-0 lg:ml-16 px-10 flex items-center gap-3 overflow-x-scroll scrollbar-hide">
-          {MOCK_SKILLS.map((skill) => (
-            <SkillCard key={skill.id} data={skill} />
-          ))}
-          {/* <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#f86a1a] border-black border-4 rounded-lg p-4 rotate-6 z-[5]">
-            <h3 className="text-3xl lg:text-4xl font-unbounded flex flex-col">
-              Frontend{" "}
-              <span className="inline-block text-xs lg:text-sm">
-                Languages {"&"} frameworks
-              </span>
-            </h3>
-            <ul className="mt-4 lg:mt-6 flex flex-col gap-3 font-unbounded text-lg lg:text-xl">
-              <li>Javascript</li>
-              <li>Typescript</li>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Vue</li>
-              <li>Astro</li>
-            </ul>
-          </div> */}
-          {/* <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#00f89e] border-black border-4 rounded-lg p-4 -rotate-[5deg] -translate-y-6 z-[4]">
-            <h3 className="text-3xl lg:text-4xl font-unbounded flex flex-col">
-              Frontend
-              <span className="inline-block text-xs lg:text-sm">
-                Styling & others
-              </span>
-            </h3>
-            <ul className="mt-4 lg:mt-6 flex flex-col gap-3 font-unbounded text-lg lg:text-xl">
-              <li>Tailwind</li>
-              <li>Sass</li>
-              <li>Styled Components</li>
-              <li>Storybook</li>
-              <li>React Testing Library</li>
-              <li>Framer Motion</li>
-            </ul>
+      <div className="flex flex-col gap-14 lg:gap-24 mt-14">
+        <div className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint]">
+          <p className="lg:w-6/12 text-indigo-200 pr-4 pl-10 font-unbounded text-lg md:text-xl xl:text-2xl 2xl:text-3xl md:sticky md:top-10">
+            Mainly focused on{" "}
+            <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:skew-x-6 before:skew-y-2 before:-z-[1]">
+              fronted
+            </span>{" "}
+            and that
+            {"'"}s the area I want to master first.
+          </p>
+          <div className="flex justify-center flex-grow px-3 lg:px-0">
+            <SkillCard data={MOCK_SKILLS[0]} index={1} />
+            <SkillCard data={MOCK_SKILLS[1]} index={2} />
           </div>
-          <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#dbff06] border-black border-4 rounded-lg p-4 rotate-[5deg] translate-y-2 z-[3]">
-            <h3 className="text-3xl lg:text-4xl font-unbounded">Backend</h3>
-            <ul className="mt-4 lg:mt-6 flex flex-col gap-3 font-unbounded text-lg lg:text-xl">
-              <li>NodeJS</li>
-              <li>ExpressJS</li>
-              <li>tRPC</li>
-              <li>Prisma</li>
-            </ul>
+        </div>
+        <div className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint]">
+          <p className="lg:w-6/12 text-yellow-200 pr-4 pl-10 font-unbounded text-lg md:text-xl xl:text-2xl 2xl:text-3xl md:sticky md:top-10">
+            However I know some{" "}
+            <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-yellow-900 before:-skew-x-[10deg] before:-z-[1]">
+              backend
+            </span>{" "}
+            related stuff and I would love to move towards becoming a fullstack
+            developer one day (most likely in the JS ecosystem).
+          </p>
+          <div className="flex justify-center flex-grow px-3 lg:px-0">
+            <SkillCard data={MOCK_SKILLS[2]} index={2} />
           </div>
-          <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#00e9f8] border-black border-4 rounded-lg p-4 -rotate-6 -translate-y-1 z-[2]">
-            <h3 className="text-3xl lg:text-4xl font-unbounded">Tools</h3>
-            <ul className="mt-4 lg:mt-6 flex flex-col gap-3 font-unbounded text-lg lg:text-xl">
-              <li>Linux</li>
-              <li>Mac OS</li>
-              <li>Windows</li>
-              <li>Figma</li>
-              <li>Visual Studio Code</li>
-            </ul>
+        </div>
+        <div className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint] mb-36">
+          <p className="lg:w-6/12 text-emerald-200 pr-4 pl-10 font-unbounded text-lg md:text-xl xl:text-2xl 2xl:text-3xl md:sticky md:top-10">
+            Besides of that I{"'"}m super hyped about mobile apps and{" "}
+            <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-emerald-900 before:skew-x-6 before:-skew-y-1 before:-z-[1]">
+              React Native
+            </span>
+            , a lot of knowledge to acquire, everything can be done with time{" "}
+            {";)"}
+          </p>
+          <div className="flex justify-center flex-grow px-3 lg:px-0">
+            <SkillCard data={MOCK_SKILLS[3]} index={1} />
+            <SkillCard data={MOCK_SKILLS[4]} index={2} />
           </div>
-          <div className="min-w-[250px] w-[250[px] min-h-[350px] lg:min-w-[300px] lg:w-[300[px] lg:min-h-[450px] bg-[#d2ecee] border-black border-4 rounded-lg p-4 rotate-[7deg] translate-y-4 z-[1]">
-            <h3 className="text-3xl lg:text-4xl font-unbounded flex flex-col">
-              Others{" "}
-              <span className="inline-block text-xs lg:text-sm">
-                {"&"} soft skills
-              </span>
-            </h3>
-            <ul className="mt-4 lg:mt-6 flex flex-col gap-3 font-unbounded text-lg lg:text-xl">
-              <li>React Native</li>
-              <li>Polish (Native)</li>
-              <li>English (B2+)</li>
-              <li>Team Player</li>
-              <li>Self Development</li>
-              <li>Curious</li>
-            </ul>
-          </div> */}
         </div>
       </div>
     </section>
