@@ -65,10 +65,7 @@ const variants: Variants = {
 
 export const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="min-h-screen py-4 md:py-5 pb-32 mt-20 lg:mt-28 bg-black"
-    >
+    <section id="skills" className="min-h-screen py-4 md:py-5 pb-32 bg-black">
       <h2 className="px-4 text-5xl sm:text-6xl md:text-7xl mt-6 md:mt-8 md:mx-4 font-unbounded font-[400] text-indigo-400 flex justify-between">
         Skills
       </h2>

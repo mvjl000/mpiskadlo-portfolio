@@ -3,6 +3,7 @@ import { Experience } from "@/components/Experience/Experience";
 import { Footer } from "@/components/Footer/Footer";
 import { Hero } from "@/components/Hero/Hero";
 import Projects from "@/components/Projects/Projects";
+import { Quote } from "@/components/Quote/Quote";
 import { Skills } from "@/components/Skills/Skills";
 import { ApolloQueryResult, gql } from "@apollo/client";
 import { InferGetStaticPropsType } from "next";
@@ -113,7 +114,7 @@ export default function Home({
             </p>
           </div>
         )}
-
+        <Quote />
         <Skills />
         <Footer />
       </>
