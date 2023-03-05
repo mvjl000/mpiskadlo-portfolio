@@ -13,7 +13,7 @@ module.exports = {
         anton: ['var(--font-anton)', ...fontFamily.sans],
       },
       colors: {
-				'hero-bg': '#131313',
+				'hero-bg': '#050505',
 				'default-font': '#ffffff',
       },
       gridTemplateColumns: {
