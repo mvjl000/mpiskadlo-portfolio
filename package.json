@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.9",
+    "@motionone/utils": "^10.15.1",
     "@next/font": "13.1.6",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
