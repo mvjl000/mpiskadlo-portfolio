@@ -28,6 +28,21 @@ const variants: Variants = {
   },
 };
 
+const buttonsVariants: Variants = {
+  whileHover: (direction) => {
+    if (direction === "next")
+      return {
+        paddingLeft: 15,
+        transition: { duration: 0.5, type: "spring", stiffness: 400 },
+      };
+
+    return {
+      paddingRight: 15,
+      transition: { duration: 0.5, type: "spring", stiffness: 400 },
+    };
+  },
+};
+
 export const Project = ({
   data,
   handleChangeIndex,
@@ -90,7 +105,7 @@ export const Project = ({
             </p>
             {data.repoUrl ? (
               <a
-                className="text-white flex items-center justify-center w-11 h-11 rounded-md hover:bg-stone-700"
+                className="text-white flex items-center justify-center w-11 h-11 rounded-md hover:bg-stone-800"
                 href={data.repoUrl}
                 rel="noreferrer"
                 target="_blank"
@@ -117,24 +132,30 @@ export const Project = ({
         {data.description}
       </p>
       <div className="text-white min-h-[100px] mt-auto lg:mt-0 flex gap-1 lg:gap-2">
-        <button
+        <motion.button
           type="button"
           disabled={isAnimating}
           onClick={() => handleChangeIndex("prev")}
-          className="w-[50%] h-full bg-hero-bg hover:bg-stone-900 font-unbounded flex flex-col gap-3 items-center justify-center disabled:hover:bg-hero-bg disabled:cursor-default"
+          className="w-[50%] h-full flex flex-col gap-3 items-center justify-center relative bg-hero-bg hover:bg-[#111] transition-colors font-unbounded disabled:hover:bg-hero-bg disabled:opacity-50 disabled:cursor-default rounded-md"
+          variants={buttonsVariants}
+          whileHover="whileHover"
+          custom="prev"
         >
           PREVIOUS
           <ArrowLeftIcon />
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           type="button"
           disabled={isAnimating}
           onClick={() => handleChangeIndex("next")}
-          className="w-[50%] h-full bg-hero-bg hover:bg-stone-900 font-unbounded flex flex-col gap-3 items-center justify-center disabled:hover:bg-hero-bg disabled:cursor-default"
+          className="w-[50%] h-full flex flex-col gap-3 items-center justify-center relative bg-hero-bg hover:bg-[#111] transition-colors font-unbounded disabled:hover:bg-hero-bg disabled:opacity-50 disabled:cursor-default rounded-sm"
+          variants={buttonsVariants}
+          whileHover="whileHover"
+          custom="next"
         >
           NEXT
           <ArrowRightIcon />
-        </button>
+        </motion.button>
       </div>
     </motion.div>
   );
