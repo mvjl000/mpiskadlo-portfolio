@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import Image from "next/image";
 import { ParallaxText } from "./ParallaxText";
 import GithubIcon from "@/images/svg/github-icon-yellow.svg";
