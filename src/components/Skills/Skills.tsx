@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import { SkillCard, SkillCardTypes } from "./SkillCard";
 
-const MOCK_SKILLS: SkillCardTypes[] = [
+const skills: SkillCardTypes[] = [
   {
     id: 1,
     title: "Frontend",
@@ -53,7 +53,7 @@ const MOCK_SKILLS: SkillCardTypes[] = [
 
 const variants: Variants = {
   offscreen: {
-    opacity: 0.8,
+    opacity: 0.5,
   },
   onscreen: {
     opacity: 1,
@@ -86,8 +86,8 @@ export const Skills = () => {
             {"'"}s the area I want to master first.
           </p>
           <div className="flex justify-center flex-grow px-3 lg:px-0">
-            <SkillCard data={MOCK_SKILLS[0]} index={1} />
-            <SkillCard data={MOCK_SKILLS[1]} index={2} />
+            <SkillCard data={skills[0]} index={1} />
+            <SkillCard data={skills[1]} index={2} />
           </div>
         </motion.div>
         <motion.div
@@ -106,7 +106,7 @@ export const Skills = () => {
             developer one day (most likely in the JS ecosystem).
           </p>
           <div className="flex justify-center flex-grow px-3 lg:px-0">
-            <SkillCard data={MOCK_SKILLS[2]} index={2} />
+            <SkillCard data={skills[2]} index={2} />
           </div>
         </motion.div>
         <motion.div
@@ -121,12 +121,12 @@ export const Skills = () => {
             <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-emerald-900 before:skew-x-6 before:-skew-y-1 before:-z-[1]">
               React Native
             </span>
-            , a lot of knowledge to acquire, everything can be done with time{" "}
+            . A lot of knowledge to acquire, everything can be done with time{" "}
             {";)"}
           </p>
           <div className="flex justify-center flex-grow px-3 lg:px-0">
-            <SkillCard data={MOCK_SKILLS[3]} index={1} />
-            <SkillCard data={MOCK_SKILLS[4]} index={2} />
+            <SkillCard data={skills[3]} index={1} />
+            <SkillCard data={skills[4]} index={2} />
           </div>
         </motion.div>
       </div>
