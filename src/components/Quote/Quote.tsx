@@ -1,6 +1,7 @@
+import { useRef } from "react";
+import Image from "next/image";
 import { ParallaxText } from "./ParallaxText";
 import GithubIcon from "@/images/svg/github-icon-yellow.svg";
-import Image from "next/image";
 
 export const Quote = () => {
   return (
@@ -9,13 +10,18 @@ export const Quote = () => {
         Talk is cheap, show me the code.
       </ParallaxText>
       <ParallaxText baseVelocity={2}>
-        ~Linus Torvalds or Kanye West, Idk.
+        ~Linus Torvalds, or Kanye West
       </ParallaxText>
-      <div className="mt-10 pr-3 lg:pr-10 flex justify-end items-center gap-2">
-        <p className="font-unbounded text-yellow-100 text-lg lg:text-2xl">
+      <div className="mt-10 pr-3 lg:pr-10 flex justify-end items-center">
+        <a
+          className="flex gap-2 font-unbounded text-yellow-100 text-lg lg:text-2xl hover:underline active:underline"
+          href="https://github.com/mvjl000"
+          rel="noreferrer"
+          target="_blank"
+        >
           check out my github profile
-        </p>
-        <Image src={GithubIcon} className="w-8 h-8" alt="Github icon" />
+          <Image src={GithubIcon} className="w-8 h-8" alt="Github icon" />
+        </a>
       </div>
     </div>
   );
