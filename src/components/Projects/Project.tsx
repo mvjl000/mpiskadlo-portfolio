@@ -149,7 +149,7 @@ export const Project = ({
           type="button"
           disabled={isAnimating}
           onClick={() => handleChangeIndex("next")}
-          className="w-[50%] h-full flex flex-col gap-3 items-center justify-center relative bg-hero-bg hover:bg-[#111] focus:bg-[#111] disabled:hover:bg-hero-bg disabled:opacity-50 disabled:cursor-default font-unbounded rounded-sm transition-colors"
+          className="w-[50%] h-full flex flex-col gap-3 items-center justify-center relative bg-hero-bg hover:bg-[#111] focus:bg-[#111] disabled:hover:bg-hero-bg disabled:opacity-50 disabled:cursor-default font-unbounded rounded-md transition-colors"
           variants={buttonsVariants}
           whileHover="whileHover"
           whileFocus="whileHover"
