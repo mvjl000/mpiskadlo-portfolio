@@ -4,4 +4,25 @@
 
 * {
   font-family: inherit;
+  box-sizing: border-box;
+}
+
+html.no-scroll,
+html.no-scroll body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #050505;
+}
+
+/* <ACCESSIBILITY> Hiding class, making content visible only to screen readers but not visually */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
