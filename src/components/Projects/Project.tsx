@@ -4,7 +4,7 @@ import LinkIcon from "@/images/svg/link-icon.svg";
 import GithubIcon from "@/images/svg/github-icon.svg";
 import { ProjectType } from "@/pages";
 import { motion, Variants } from "framer-motion";
-import { useState } from "react";
+import { useIsAnimating } from "@/hooks/useIsAnimating";
 
 interface ProjectProps {
   data: ProjectType;
@@ -48,16 +48,7 @@ export const Project = ({
   handleChangeIndex,
   direction,
 }: ProjectProps) => {
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const handleSetAnimate = (starting: boolean) => {
-    if (starting) {
-      document.documentElement.classList.add("no-scroll");
-    } else {
-      document.documentElement.classList.remove("no-scroll");
-    }
-    setIsAnimating(!isAnimating);
-  };
+  const { isAnimating, handleSetIsAnimating } = useIsAnimating();
 
   return (
     <motion.div
@@ -68,8 +59,8 @@ export const Project = ({
       exit="exit"
       custom={direction}
       transition={{ duration: 0.75 }}
-      onAnimationStart={() => handleSetAnimate(true)}
-      onAnimationComplete={() => handleSetAnimate(false)}
+      onAnimationStart={() => handleSetIsAnimating(true)}
+      onAnimationComplete={() => handleSetIsAnimating(false)}
     >
       <div className="hidden lg:block px-4 py-4 lg:pt-0">
         <div className="w-full h-full min-h-[300px] flex justify-center items-center p-4 bg-white rounded-md">

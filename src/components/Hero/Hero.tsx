@@ -1,7 +1,6 @@
-import { AboutMe } from "./AboutMe";
 import { motion, Variants } from "framer-motion";
-import { DownButton } from "./DownButton";
-import { useState } from "react";
+import { DownButton } from "@/components/Hero/DownButton";
+import { useIsAnimating } from "@/hooks/useIsAnimating";
 
 const variantsP1: Variants = {
   initial: {
@@ -49,18 +48,8 @@ const variantsP3: Variants = {
 };
 
 export const Hero = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
+  const { handleSetIsAnimating } = useIsAnimating();
 
-  const handleSetAnimate = (starting: boolean) => {
-    if (starting) {
-      document.documentElement.classList.add("no-scroll");
-    } else {
-      document.documentElement.classList.remove("no-scroll");
-    }
-    setIsAnimating(!isAnimating);
-  };
-
-  const age = new Date().getFullYear() - 2004;
   return (
     <section
       id="hero"
@@ -85,8 +74,8 @@ export const Hero = () => {
           variants={variantsP2}
           initial="initial"
           animate="animate"
-          onAnimationStart={() => handleSetAnimate(true)}
-          onAnimationEnd={() => handleSetAnimate(false)}
+          onAnimationStart={() => handleSetIsAnimating(true)}
+          onAnimationEnd={() => handleSetIsAnimating(false)}
         >
           FRONTEND
         </motion.p>
