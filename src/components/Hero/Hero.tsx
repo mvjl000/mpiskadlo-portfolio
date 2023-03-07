@@ -1,6 +1,5 @@
-import { AboutMe } from "./AboutMe";
 import { motion, Variants } from "framer-motion";
-import { DownButton } from "./DownButton";
+import { DownButton } from "@/components/Hero/DownButton";
 import { useIsAnimating } from "@/hooks/useIsAnimating";
 
 const variantsP1: Variants = {
