@@ -14,7 +14,7 @@ const variants: Variants = {
       duration: 0.6,
       type: "spring",
       stiffness: 100,
-      delay: 1.25,
+      delay: 2,
     },
   },
 };
@@ -39,7 +39,7 @@ export const DownButton = () => {
       <motion.button
         type="button"
         onClick={handleScroll}
-        className="block w-[200px] h-[200px] border-2 border-white rounded-full relative cursor-pointer"
+        className="block w-[200px] h-[200px] border-2 border-white rounded-full hover:bg-slate-900 transition-colors relative cursor-pointer"
       >
         <p className="text-white font-mono text-xl origin-center">
           <span className="h-[100px] absolute top-0 left-1/2 translate-x-[-50%] origin-bottom rotate-[-80deg]">
