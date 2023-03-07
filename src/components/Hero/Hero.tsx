@@ -1,46 +1,105 @@
 import { AboutMe } from "./AboutMe";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { DownButton } from "./DownButton";
+import { useState } from "react";
+
+const variantsP1: Variants = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      delay: 0.5,
+    },
+  },
+};
+const variantsP2: Variants = {
+  initial: {
+    opacity: 0,
+    x: -100,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      delay: 1,
+      type: "tween",
+    },
+  },
+};
+const variantsP3: Variants = {
+  initial: {
+    opacity: 0,
+    x: 100,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      delay: 1,
+      type: "tween",
+    },
+  },
+};
 
 export const Hero = () => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleSetAnimate = (starting: boolean) => {
+    if (starting) {
+      document.documentElement.classList.add("no-scroll");
+    } else {
+      document.documentElement.classList.remove("no-scroll");
+    }
+    setIsAnimating(!isAnimating);
+  };
+
   const age = new Date().getFullYear() - 2004;
   return (
     <section
       id="hero"
       className="min-h-screen p-4 pt-10 md:p-5 md:pt-12 bg-gradient-to-b from-hero-bg to-gray-900 relative"
     >
-      <div className="flex items-center justify-start md:justify-center">
-        <motion.h1
-          className="font-unbounded font-[500] text-[2.8rem] sm:text-6xl lg:text-7xl 2xl:text-8xl bg-gradient-to-r from-indigo-600 via-indigo-300 to-blue-300 text-transparent bg-clip-text select-none"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.75 }}
-        >
+      <div className="flex items-center justify-start">
+        <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-indigo-600 via-indigo-300 to-blue-300 text-transparent bg-clip-text">
           @mpiskadlo
         </motion.h1>
       </div>
-      <motion.p
-        className="mt-20 text-2xl text-indigo-200 font-unbounded tracking-wide"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.75, delay: 0.75 }}
-      >
-        Self taught
-        <br />
-        <span className="text-3xl">frontend developer</span>
-      </motion.p>
+      <div className="max-w-[1280px] mt-28 sm:w-9/12 lg:w-7/12 sm:mx-auto flex flex-col items-star font-unbounded">
+        <motion.p
+          className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl tracking-wide text-white"
+          variants={variantsP1}
+          initial="initial"
+          animate="animate"
+        >
+          Self taught
+        </motion.p>
+        <motion.p
+          className="mt-2 text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl tracking-tighter text-yellow-300"
+          variants={variantsP2}
+          initial="initial"
+          animate="animate"
+          onAnimationStart={() => handleSetAnimate(true)}
+          onAnimationEnd={() => handleSetAnimate(false)}
+        >
+          FRONTEND
+        </motion.p>
+        <motion.p
+          className="ml-auto text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl tracking-tighter text-yellow-100"
+          variants={variantsP3}
+          initial="initial"
+          animate="animate"
+        >
+          DEVELOPER
+        </motion.p>
+      </div>
       <DownButton />
-      {/* <motion.p
-        className="mt-8 text-xl text-indigo-200 font-unbounded text-justify"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.75, delay: 1.5 }}
-      >
-        I am a {age} y.o. self taught frontend developer. I have been
-        programming since the beginning of 2020 🦠 (such a great time to start
-        coding 😅).
-      </motion.p> */}
-      {/* <AboutMe /> */}
     </section>
   );
 };
