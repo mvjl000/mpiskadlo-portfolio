@@ -1,6 +1,5 @@
 import { motion, Variants } from "framer-motion";
 import { DownButton } from "@/components/Hero/DownButton";
-import { useIsAnimating } from "@/hooks/useIsAnimating";
 
 const variantsP1: Variants = {
   initial: {
@@ -47,9 +46,15 @@ const variantsP3: Variants = {
   },
 };
 
-export const Hero = () => {
-  const { handleSetIsAnimating } = useIsAnimating();
+const handleSetAnimate = (starting: boolean) => {
+  if (starting) {
+    document.documentElement.classList.add("no-scroll");
+  } else {
+    document.documentElement.classList.remove("no-scroll");
+  }
+};
 
+export const Hero = () => {
   return (
     <section
       id="hero"
@@ -74,8 +79,6 @@ export const Hero = () => {
           variants={variantsP2}
           initial="initial"
           animate="animate"
-          onAnimationStart={() => handleSetIsAnimating(true)}
-          onAnimationEnd={() => handleSetIsAnimating(false)}
         >
           FRONTEND
         </motion.p>
@@ -84,6 +87,8 @@ export const Hero = () => {
           variants={variantsP3}
           initial="initial"
           animate="animate"
+          onAnimationStart={() => handleSetAnimate(true)}
+          onAnimationComplete={() => handleSetAnimate(false)}
         >
           DEVELOPER
         </motion.p>
