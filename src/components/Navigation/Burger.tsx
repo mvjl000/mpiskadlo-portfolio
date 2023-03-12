@@ -1,17 +1,13 @@
 export const Burger = () => {
   return (
-    <button className="relative group" type="button">
-      <div className="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md">
-        <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden">
-          <div className="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-x-10"></div>
-          <div className="bg-white h-[2px] w-7 rounded transform transition-all duration-300 group-focus:translate-x-10 delay-75"></div>
-          <div className="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-x-10 delay-150"></div>
-
-          <div className="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-focus:translate-x-0 flex w-0 group-focus:w-12">
-            <div className="absolute bg-white h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300 group-focus:rotate-45"></div>
-            <div className="absolute bg-white h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 group-focus:-rotate-45"></div>
-          </div>
-        </div>
+    <button
+      type="button"
+      className="group flex justify-center items-center w-12 h-12 md:w-16 md:h-16"
+    >
+      <div className="flex flex-col justify-between items-end w-3/4 h-2/5 group-hover:rotate-90 transition-all duration-300">
+        <span className="block w-full h-[2px] bg-white" />
+        <span className="block w-2/3 h-[2px] bg-white group-hover:w-full transition-all duration-150 delay-300" />
+        <span className="block w-1/3 h-[2px] bg-white group-hover:w-full transition-all duration-150 delay-300" />
       </div>
     </button>
   );
