@@ -4,7 +4,7 @@ import LinkIcon from "@/images/svg/link-icon.svg";
 import GithubIcon from "@/images/svg/github-icon.svg";
 import { ProjectType } from "@/pages";
 import { motion, Variants } from "framer-motion";
-import { useIsAnimating } from "@/hooks/useIsAnimating";
+import { useIsAnimating } from "@/hooks";
 
 interface ProjectProps {
   data: ProjectType;

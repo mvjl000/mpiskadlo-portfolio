@@ -49,9 +49,9 @@ const variantsP3: Variants = {
 
 const handleSetAnimate = (starting: boolean) => {
   if (starting) {
-    document.documentElement.classList.add("no-scroll");
+    document.documentElement.classList.add("no-scroll-x");
   } else {
-    document.documentElement.classList.remove("no-scroll");
+    document.documentElement.classList.remove("no-scroll-x");
   }
 };
 
