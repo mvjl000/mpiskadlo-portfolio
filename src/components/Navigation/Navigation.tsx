@@ -7,7 +7,7 @@ import { useAtom } from "jotai";
 
 type Section = "experience" | "projects" | "skills";
 
-const variants: Variants = {
+const menuVariants: Variants = {
   initial: {
     visibility: "hidden",
   },
@@ -18,6 +18,13 @@ const variants: Variants = {
   exit: {
     visibility: "hidden",
     transition: { delay: 1 },
+  },
+};
+
+const buttonsVariants: Variants = {
+  exit: {
+    visibility: "hidden",
+    transition: { delay: 0.5 },
   },
 };
 
@@ -46,7 +53,7 @@ export const Navigation = () => {
         <>
           <motion.nav
             className="fixed inset-0 flex justify-center items-center z-40 overflow-hidden bg-black"
-            variants={variants}
+            variants={menuVariants}
             initial="initial"
             animate="animate"
             exit="exit"
@@ -60,31 +67,37 @@ export const Navigation = () => {
             </motion.div>
             <ul className="flex flex-col gap-5">
               <li>
-                <button
+                <motion.button
                   value="Experience"
                   className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full after:transition-all after:duration-[450ms] after:ease-in-out"
                   onClick={() => handleScroll("experience")}
+                  variants={buttonsVariants}
+                  exit="exit"
                 >
                   Experience
-                </button>
+                </motion.button>
               </li>
               <li className="border-y-2 py-5 border-stone-900">
-                <button
+                <motion.button
                   value="Projects"
                   className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full  after:transition-all after:duration-[450ms] after:ease-in-out"
                   onClick={() => handleScroll("projects")}
+                  variants={buttonsVariants}
+                  exit="exit"
                 >
                   Projects
-                </button>
+                </motion.button>
               </li>
               <li>
-                <button
+                <motion.button
                   value="Skills"
                   className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full  after:transition-all after:duration-[450ms] after:ease-in-out"
                   onClick={() => handleScroll("skills")}
+                  variants={buttonsVariants}
+                  exit="exit"
                 >
                   Skills
-                </button>
+                </motion.button>
               </li>
             </ul>
           </motion.nav>
