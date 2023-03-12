@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Provider } from "jotai";
 
 import { Unbounded, Anton, Montserrat } from "@next/font/google";
 
@@ -26,7 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <main
         className={`${montserrat.variable} ${unbounded.variable} ${anton.variable} font-sans`}
       >
-        <Component {...pageProps} />
+        <Provider>
+          <Component {...pageProps} />
+        </Provider>
       </main>
     </>
   );
