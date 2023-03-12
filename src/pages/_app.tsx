@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { Provider } from "jotai";
 
 import { Unbounded, Anton, Montserrat } from "@next/font/google";
+import { Layout } from "@/components/Layout";
 
 const unbounded = Unbounded({
   weight: ["400", "500"],
@@ -28,7 +29,9 @@ export default function App({ Component, pageProps }: AppProps) {
         className={`${montserrat.variable} ${unbounded.variable} ${anton.variable} font-sans`}
       >
         <Provider>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </main>
     </>

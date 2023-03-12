@@ -2,6 +2,7 @@ import client from "@/apollo-client";
 import { Experience } from "@/components/Experience/Experience";
 import { Footer } from "@/components/Footer/Footer";
 import { Hero } from "@/components/Hero/Hero";
+import { Navigation } from "@/components/Navigation/Navigation";
 import Projects from "@/components/Projects/Projects";
 import { Quote } from "@/components/Quote/Quote";
 import { Skills } from "@/components/Skills/Skills";
@@ -9,6 +10,8 @@ import { ApolloQueryResult, gql } from "@apollo/client";
 import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { z } from "zod";
+import { isMenuOpenAtom } from "@/store";
+import { useAtom } from "jotai";
 
 const projectsQuery = gql`
   {
@@ -92,6 +95,8 @@ export const getStaticProps = async () => {
 export default function Home({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [isMenuOpen] = useAtom(isMenuOpenAtom);
+
   return (
     <>
       <Head>
@@ -101,6 +106,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
+        {isMenuOpen && <Navigation />}
         <Hero />
         <Experience />
         {projects.success ? (

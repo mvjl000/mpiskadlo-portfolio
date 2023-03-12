@@ -1,6 +1,5 @@
 import { motion, Variants } from "framer-motion";
 import { DownButton } from "@/components/Hero/DownButton";
-import { Burger } from "../Navigation/Burger";
 
 const variantsP1: Variants = {
   initial: {
@@ -65,7 +64,6 @@ export const Hero = () => {
         <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-900 to-gray-700 text-transparent bg-clip-text">
           @mpiskadlo
         </motion.h1>
-        <Burger />
       </div>
       <div className="mt-[22vh] md:mt-[16vh] max-w-[1280px] w-full sm:w-9/12 lg:w-7/12 sm:mx-auto flex flex-col flex-grow items-star font-unbounded">
         <motion.p
