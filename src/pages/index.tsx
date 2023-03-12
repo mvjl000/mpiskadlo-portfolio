@@ -95,8 +95,6 @@ export const getStaticProps = async () => {
 export default function Home({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [isMenuOpen] = useAtom(isMenuOpenAtom);
-
   return (
     <>
       <Head>
@@ -106,7 +104,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        {isMenuOpen && <Navigation />}
+        <Navigation />
         <Hero />
         <Experience />
         {projects.success ? (

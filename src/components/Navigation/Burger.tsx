@@ -29,8 +29,8 @@ export const CloseBurger = () => {
       onClick={handleToggleMenu}
     >
       <div className="relative w-full h-full group-hover:rotate-90 group-focus-visible:rotate-90 transition-all duration-300">
-        <span className="block w-2/3 h-[2px] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45" />
-        <span className="block w-2/3 h-[2px] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45" />
+        <span className="block w-2/3 h-[2px] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45" />
+        <span className="block w-2/3 h-[2px] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45" />
         <span className="visually-hidden">Close the navigation</span>
       </div>
     </button>
