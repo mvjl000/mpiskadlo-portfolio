@@ -62,7 +62,7 @@ export const Navigation = () => {
               <li>
                 <button
                   value="Experience"
-                  className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full after:transition-all after:duration-[400ms] after:ease-in-out"
+                  className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full after:transition-all after:duration-[450ms] after:ease-in-out"
                   onClick={() => handleScroll("experience")}
                 >
                   Experience
@@ -71,7 +71,7 @@ export const Navigation = () => {
               <li className="border-y-2 py-5 border-stone-900">
                 <button
                   value="Projects"
-                  className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full  after:transition-all after:duration-[400ms] after:ease-in-out"
+                  className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full  after:transition-all after:duration-[450ms] after:ease-in-out"
                   onClick={() => handleScroll("projects")}
                 >
                   Projects
@@ -80,7 +80,7 @@ export const Navigation = () => {
               <li>
                 <button
                   value="Skills"
-                  className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full  after:transition-all after:duration-[400ms] after:ease-in-out"
+                  className="font-unbounded text-yellow-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl uppercase relative after:content-[attr(value)] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:text-black after:bg-yellow-400 after:overflow-hidden after:w-full after:h-0 hover:after:h-full focus-visible:after:h-full  after:transition-all after:duration-[450ms] after:ease-in-out"
                   onClick={() => handleScroll("skills")}
                 >
                   Skills
