@@ -48,9 +48,9 @@ const variantsP3: Variants = {
 
 const handleSetAnimate = (starting: boolean) => {
   if (starting) {
-    document.documentElement.classList.add("no-scroll");
+    document.documentElement.classList.add("no-scroll-x");
   } else {
-    document.documentElement.classList.remove("no-scroll");
+    document.documentElement.classList.remove("no-scroll-x");
   }
 };
 
@@ -60,7 +60,7 @@ export const Hero = () => {
       id="hero"
       className="min-h-screen p-4 pt-10 md:p-5 md:pt-12 bg-gradient-to-b from-hero-bg to-gray-900 relative flex flex-col justify-start"
     >
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-between">
         <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-900 to-gray-700 text-transparent bg-clip-text">
           @mpiskadlo
         </motion.h1>
