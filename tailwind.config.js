@@ -21,6 +21,9 @@ module.exports = {
       },
       gridTemplateRows: {
         projects: '3fr 1fr'
+      },
+      screens: {
+        'xs': '482px'
       }
     },
   },
