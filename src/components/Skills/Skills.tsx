@@ -110,7 +110,7 @@ export const Skills = () => {
           </div>
         </motion.div>
         <motion.div
-          className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint] mb-36"
+          className="flex flex-col gap-12 md:flex-row md:items-start pb-5 md:py-10 [contain:paint] mb-0 md:mb-20"
           variants={variants}
           initial="offscreen"
           whileInView="onscreen"
