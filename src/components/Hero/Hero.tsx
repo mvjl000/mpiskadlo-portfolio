@@ -55,10 +55,10 @@ export const Hero = () => {
       id="hero"
       className="min-h-screen p-4 pt-10 md:p-5 md:pt-12 bg-gradient-to-b from-hero-bg to-gray-900 relative flex flex-col justify-start"
     >
-      <div className="flex items-center justify-end">
-        {/* <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-900 to-gray-700 text-transparent bg-clip-text">
+      <div className="flex items-center justify-start">
+        <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-900 to-gray-700 text-transparent bg-clip-text">
           @mpiskadlo
-        </motion.h1> */}
+        </motion.h1>
       </div>
       <div className="mt-[22vh] md:mt-[16vh] max-w-[1280px] w-full sm:w-9/12 lg:w-7/12 sm:mx-auto flex flex-col flex-grow items-star font-unbounded">
         <motion.p
