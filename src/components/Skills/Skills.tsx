@@ -80,7 +80,7 @@ export const Skills = () => {
           <p className="lg:w-6/12 text-indigo-200 pr-4 pl-10 font-unbounded text-lg md:text-xl xl:text-2xl 2xl:text-3xl md:sticky md:top-10">
             Mainly focused on{" "}
             <span className="inline-block relative z-[2] before:absolute before:w-full before:h-full before:bg-indigo-900 before:skew-x-6 before:skew-y-2 before:-z-[1]">
-              fronted
+              frontend
             </span>{" "}
             and that
             {"'"}s the area I want to master first.
