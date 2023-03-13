@@ -77,6 +77,7 @@ export const getStaticProps = async () => {
           data: null,
         },
       },
+      revalidate: 10,
     } as const;
 
   return {
@@ -86,6 +87,7 @@ export const getStaticProps = async () => {
         data: parsingResult.data,
       },
     },
+    revalidate: 10,
   };
 };
 
