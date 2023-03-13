@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAtom } from "jotai";
 import { isMenuOpenAtom } from "./store";
+import { Section } from "@/types";
 
 export const useOpenMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useAtom(isMenuOpenAtom);
@@ -20,14 +21,14 @@ export const useOpenMenu = () => {
   };
 };
 
-export const useIsAnimating = () => {
+export const useIsAnimating = (section: Section) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleSetAnimate = (starting: boolean) => {
     if (starting) {
-      document.documentElement.classList.add("no-scroll-x");
+      document.documentElement.classList.add(`no-scroll-${section}`);
     } else {
-      document.documentElement.classList.remove("no-scroll-x");
+      document.documentElement.classList.remove(`no-scroll-${section}`);
     }
     setIsAnimating(!isAnimating);
   };

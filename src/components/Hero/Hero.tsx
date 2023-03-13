@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { DownButton } from "@/components/Hero/DownButton";
+import { useIsAnimating } from "@/hooks";
 
 const variantsP1: Variants = {
   initial: {
@@ -46,24 +47,18 @@ const variantsP3: Variants = {
   },
 };
 
-const handleSetAnimate = (starting: boolean) => {
-  if (starting) {
-    document.documentElement.classList.add("no-scroll-x");
-  } else {
-    document.documentElement.classList.remove("no-scroll-x");
-  }
-};
-
 export const Hero = () => {
+  const { handleSetIsAnimating } = useIsAnimating("hero");
+
   return (
     <section
       id="hero"
       className="min-h-screen p-4 pt-10 md:p-5 md:pt-12 bg-gradient-to-b from-hero-bg to-gray-900 relative flex flex-col justify-start"
     >
-      <div className="flex items-center justify-between">
-        <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-900 to-gray-700 text-transparent bg-clip-text">
+      <div className="flex items-center justify-end">
+        {/* <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-900 to-gray-700 text-transparent bg-clip-text">
           @mpiskadlo
-        </motion.h1>
+        </motion.h1> */}
       </div>
       <div className="mt-[22vh] md:mt-[16vh] max-w-[1280px] w-full sm:w-9/12 lg:w-7/12 sm:mx-auto flex flex-col flex-grow items-star font-unbounded">
         <motion.p
@@ -87,8 +82,8 @@ export const Hero = () => {
           variants={variantsP3}
           initial="initial"
           animate="animate"
-          onAnimationStart={() => handleSetAnimate(true)}
-          onAnimationComplete={() => handleSetAnimate(false)}
+          onAnimationStart={() => handleSetIsAnimating(true)}
+          onAnimationComplete={() => handleSetIsAnimating(false)}
         >
           DEVELOPER
         </motion.p>
