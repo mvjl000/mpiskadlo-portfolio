@@ -7,8 +7,10 @@
   box-sizing: border-box;
 }
 
-html.no-scroll-x,
-html.no-scroll-x body {
+html.no-scroll-hero,
+html.no-scroll-hero body,
+html.no-scroll-projects,
+html.no-scroll-projects body {
   overflow-x: hidden;
 }
 

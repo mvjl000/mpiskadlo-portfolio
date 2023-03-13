@@ -1,7 +1,6 @@
 import { useOpenMenu } from "@/hooks";
+import { Section } from "@/types";
 import { motion, Variants } from "framer-motion";
-
-type Section = "experience" | "projects" | "skills";
 
 const variants: Variants = {
   exit: {

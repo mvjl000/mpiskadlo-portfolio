@@ -1,7 +1,7 @@
 import { Project } from "@/components/Projects/Project";
 import { type ProjectType } from "@/pages/index";
 import { useMemo, useState } from "react";
-import { AnimatePresence, AnimationOptions } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 interface ProjectsProps {
   projects: ProjectType[];

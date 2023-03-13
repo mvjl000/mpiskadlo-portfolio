@@ -48,7 +48,7 @@ export const Project = ({
   handleChangeIndex,
   direction,
 }: ProjectProps) => {
-  const { isAnimating, handleSetIsAnimating } = useIsAnimating();
+  const { isAnimating, handleSetIsAnimating } = useIsAnimating("projects");
 
   return (
     <motion.div

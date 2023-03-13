@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { DownButton } from "@/components/Hero/DownButton";
+import { useIsAnimating } from "@/hooks";
 
 const variantsP1: Variants = {
   initial: {
@@ -46,21 +47,15 @@ const variantsP3: Variants = {
   },
 };
 
-const handleSetAnimate = (starting: boolean) => {
-  if (starting) {
-    document.documentElement.classList.add("no-scroll-x");
-  } else {
-    document.documentElement.classList.remove("no-scroll-x");
-  }
-};
-
 export const Hero = () => {
+  const { handleSetIsAnimating } = useIsAnimating("hero");
+
   return (
     <section
       id="hero"
       className="min-h-screen p-4 pt-10 md:p-5 md:pt-12 bg-gradient-to-b from-hero-bg to-gray-900 relative flex flex-col justify-start"
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-start">
         <motion.h1 className="font-unbounded font-[500] text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-900 to-gray-700 text-transparent bg-clip-text">
           @mpiskadlo
         </motion.h1>
@@ -87,8 +82,8 @@ export const Hero = () => {
           variants={variantsP3}
           initial="initial"
           animate="animate"
-          onAnimationStart={() => handleSetAnimate(true)}
-          onAnimationComplete={() => handleSetAnimate(false)}
+          onAnimationStart={() => handleSetIsAnimating(true)}
+          onAnimationComplete={() => handleSetIsAnimating(false)}
         >
           DEVELOPER
         </motion.p>

@@ -3,7 +3,7 @@ import { CloseBurger } from "@/components/Navigation/Burger";
 import { Panels } from "@/components/Navigation/Panels";
 import { isMenuOpenAtom } from "@/store";
 import { useAtom } from "jotai";
-import { NavigationButton } from "./NavigationButton";
+import { NavigationButton } from "@/components/Navigation/NavigationButton";
 
 const variants: Variants = {
   initial: {
