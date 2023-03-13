@@ -4,6 +4,7 @@ import { Provider } from "jotai";
 
 import { Unbounded, Anton, Montserrat } from "@next/font/google";
 import { Layout } from "@/components/Layout";
+import Head from "next/head";
 
 const unbounded = Unbounded({
   weight: ["400", "500"],
@@ -25,6 +26,15 @@ const montserrat = Montserrat({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <title>Miłosz Piskadło</title>
+        <meta
+          name="description"
+          content="Miłosz Piskadło, frontend developer."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <main
         className={`${montserrat.variable} ${unbounded.variable} ${anton.variable} font-sans`}
       >

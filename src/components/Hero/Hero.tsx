@@ -60,7 +60,7 @@ export const Hero = () => {
           @mpiskadlo
         </motion.h1>
       </div>
-      <div className="mt-[22vh] md:mt-[16vh] max-w-[1280px] w-full sm:w-9/12 lg:w-7/12 sm:mx-auto flex flex-col flex-grow items-star font-unbounded">
+      <div className="mt-[22vh] md:mt-[16vh] max-w-[1280px] w-full xs:w-10/12 sm:w-9/12 lg:w-7/12 xs:mx-auto flex flex-col flex-grow items-star font-unbounded">
         <motion.p
           className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl tracking-wide text-white"
           variants={variantsP1}
